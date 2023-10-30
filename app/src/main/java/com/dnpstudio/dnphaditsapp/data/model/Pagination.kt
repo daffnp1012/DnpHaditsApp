@@ -1,4 +1,4 @@
-package com.dnpstudio.dnphaditsapp.response
+package com.dnpstudio.dnphaditsapp.data.model
 
 
 import com.google.gson.annotations.SerializedName

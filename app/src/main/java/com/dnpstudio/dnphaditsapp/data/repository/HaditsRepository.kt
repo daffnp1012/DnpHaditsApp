@@ -1,6 +1,6 @@
 package com.dnpstudio.dnphaditsapp.data.repository
 
-import com.dnpstudio.dnphaditsapp.service.HaditsAPI
+import com.dnpstudio.dnphaditsapp.data.service.HaditsAPI
 
 class HaditsRepository(private val haditsAPI: HaditsAPI) {
     suspend fun getPerawi() = haditsAPI.getPerawi()

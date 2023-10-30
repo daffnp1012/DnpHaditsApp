@@ -1,24 +1,14 @@
-package com.dnpstudio.dnphaditsapp.service
+package com.dnpstudio.dnphaditsapp.data.service
 
-import com.dnpstudio.dnphaditsapp.response.HadistResponse
-import com.dnpstudio.dnphaditsapp.response.PerawiResponse
-import com.dnpstudio.dnphaditsapp.response.SearchHadistResponse
+import com.dnpstudio.dnphaditsapp.data.model.HadistResponse
+import com.dnpstudio.dnphaditsapp.data.model.PerawiResponse
+import com.dnpstudio.dnphaditsapp.data.model.SearchHadistResponse
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface HaditsAPI {
-
-    companion object{
-        fun create(): HaditsAPI {
-            return Retrofit.Builder()
-                .baseUrl("https://hadis-api-id.vercel.app/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-                .create(HaditsAPI::class.java)
-        }
-    }
 
     @GET("hadith")
     suspend fun getPerawi(): PerawiResponse
