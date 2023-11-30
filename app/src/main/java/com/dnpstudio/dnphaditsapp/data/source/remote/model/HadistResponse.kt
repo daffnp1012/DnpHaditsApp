@@ -1,9 +1,9 @@
-package com.dnpstudio.dnphaditsapp.data.model
+package com.dnpstudio.dnphaditsapp.data.source.remote.model
 
 
 import com.google.gson.annotations.SerializedName
 
-data class SearchHadistResponse(
+data class HadistResponse(
     @SerializedName("arab")
     val arab: String,
     @SerializedName("id")

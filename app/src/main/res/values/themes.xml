@@ -2,4 +2,10 @@
 <resources>
 
     <style name="Theme.DnpHaditsApp" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.HaditsSplashScreen" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenAnimatedIcon">@drawable/hadist_logo</item>
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="postSplashScreenTheme">@style/Theme.DnpHaditsApp</item>
+        <item name="android:duration">750</item>
+    </style>
 </resources>

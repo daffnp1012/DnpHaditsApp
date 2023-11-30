@@ -1,29 +1,20 @@
 package com.dnpstudio.dnphaditsapp
 
-import androidx.compose.runtime.Composable
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
-import com.dnpstudio.dnphaditsapp.navigation.ScreenRoute
-import com.dnpstudio.dnphaditsapp.ui.home.HomeScreen
-import com.dnpstudio.dnphaditsapp.ui.splash.SplashScreen
+import android.app.Application
+import com.dnpstudio.dnphaditsapp.data.di.AppModule
+import com.dnpstudio.dnphaditsapp.data.di.AppModuleImpl
+import com.dnpstudio.dnphaditsapp.data.repository.HaditsRepository
+import com.dnpstudio.dnphaditsapp.data.repository.HaditsRepositoryImpl
 
-@Composable
-fun DnpHaditsApp(
-    navHostController: NavHostController = rememberNavController()
-) {
-
-    NavHost(
-        navController = navHostController,
-        startDestination = ScreenRoute.splash.route
-    ){
-        composable(ScreenRoute.splash.route){
-            SplashScreen()
-        }
-        composable(ScreenRoute.home.route){
-            HomeScreen()
-        }
+class DnpHaditsApp: Application(){
+    companion object{
+        lateinit var repository: HaditsRepository
+        private lateinit var  appModule: AppModule
     }
-    
+
+    override fun onCreate(){
+        super.onCreate()
+        appModule = AppModuleImpl
+        repository = HaditsRepositoryImpl(appModule.hadithApi)
+    }
 }

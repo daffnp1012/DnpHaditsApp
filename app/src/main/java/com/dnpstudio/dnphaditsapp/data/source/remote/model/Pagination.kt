@@ -1,4 +1,4 @@
-package com.dnpstudio.dnphaditsapp.data.model
+package com.dnpstudio.dnphaditsapp.data.source.remote.model
 
 
 import com.google.gson.annotations.SerializedName
